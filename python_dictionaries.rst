@@ -1,7 +1,7 @@
 Python Dictionaries
 ===================
 
-A dictionary is a collection of values, stored using a key. Keys are unique and case sensitive.
+A `Python dictionary`_ is a collection of values, stored using a key. Keys are unique and case sensitive.
 
 Here's an example dictionary:
 
@@ -133,3 +133,5 @@ This will output:
 
 The ``items()`` method returns an iterator over the dictionary's key-value pairs. 
 Each iteration gives you both the key and the corresponding value.
+
+.. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
