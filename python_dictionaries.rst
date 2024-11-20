@@ -134,4 +134,45 @@ This will output:
 The ``items()`` method returns an iterator over the dictionary's key-value pairs. 
 Each iteration gives you both the key and the corresponding value.
 
+Changing values in the dictionary
+---------------------------------
+
+To change the value (associated with a key) in the dictionary, you can do that 
+by assigning a new value to the key, for ecample:
+
+.. code-block:: python
+
+    favourites = {
+        'color': 'blue',
+        'food': 'pizza',
+        'animal': 'dog',
+        'movie': 'Inception',
+        'sport': 'basketball'
+    }
+
+    # change the favourite color
+    favourites['color'] = 'green'
+
+    # change the favourite movie
+    favourites['movie'] = 'Blade Runner'
+
+
+After performing these changes, the dictinary looks like this:
+
+.. code-block:: python
+    print(favourites)
+
+Code output:
+
+.. code-block:: python
+    {
+    'color': 'green',
+    'food': 'pizza',
+    'animal': 'dog',
+    'movie': 'Blade Runner',
+    'sport': 'basketball'
+    }
+
+
+
 .. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
