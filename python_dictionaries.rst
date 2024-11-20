@@ -137,8 +137,8 @@ Each iteration gives you both the key and the corresponding value.
 Changing values in the dictionary
 ---------------------------------
 
-To change the value (associated with a key) in the dictionary, you can do that 
-by assigning a new value to the key, for example:
+To change the value associated with a key in a dictionary, assign a new value to the key, 
+as shown below:
 
 .. code-block:: python
 
@@ -160,11 +160,13 @@ by assigning a new value to the key, for example:
 After performing these changes, the dictinary looks like this:
 
 .. code-block:: python
+
     print(favourites)
 
 Code output:
 
 .. code-block:: python
+
     {
     'color': 'green',
     'food': 'pizza',
