@@ -138,7 +138,7 @@ Changing values in the dictionary
 ---------------------------------
 
 To change the value (associated with a key) in the dictionary, you can do that 
-by assigning a new value to the key, for ecample:
+by assigning a new value to the key, for example:
 
 .. code-block:: python
 
@@ -172,7 +172,6 @@ Code output:
     'movie': 'Blade Runner',
     'sport': 'basketball'
     }
-
 
 
 .. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
