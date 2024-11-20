@@ -165,7 +165,7 @@ After performing these changes, the dictinary looks like this:
 
 Code output:
 
-.. code-block:: python
+.. code-block::
 
     {
     'color': 'green',
@@ -175,5 +175,96 @@ Code output:
     'sport': 'basketball'
     }
 
+
+Removing items from a dictionary:
+---------------------------------
+
+Removing items from a Python dictionary, can be done in several ways:
+
+1. Using ``del``
+2. Using the ``pop()`` method 
+3. Using the ``popitem()`` method
+
+Let's see how these options work on our dictionary:
+
+.. code-block:: python
+
+    favourites = {
+        'color': 'blue',
+        'food': 'pizza',
+        'animal': 'dog',
+        'movie': 'Inception',
+        'sport': 'basketball'
+    }
+
+``del`` removes an item from the dictionary by specifying its key.
+
+For example:
+
+.. code-block:: python
+
+    # remove 'food'
+    del favourites['food']
+
+    print(favourites)
+
+Output:
+
+.. code-block::
+
+    {
+        'color': 'blue',
+        'animal': 'dog',
+        'movie': 'Inception',
+        'sport': 'basketball'
+    }
+
+The ``pop()`` method removes an item by key and returns this value.
+
+For example:
+
+.. code-block:: python
+
+    # remove 'animal' using 'pop()'
+    rem = favourites.pop('animal')
+
+    print(favourites)
+    print("Removed:", rem)
+
+The code outputs:
+
+.. code-block:: 
+
+    {
+        'color': 'blue',
+        'movie': 'Inception',
+        'sport': 'basketball'
+    }
+    removed: dog
+
+The ``pop()`` method returns the removed value, so it can be stored 
+and/or used later in the code, if needed.
+
+The ``popitem()`` method removes and returns the last key - value pair in the dictionary.
+
+For example:
+
+.. code-block:: python
+
+    # remove the last item using 'popitem()'
+    last = favourites.popitem()
+
+    print(favourites)
+    print("removed:", last)
+
+Output:
+
+.. code-block::
+
+    {
+        'color': 'blue',
+        'movie': 'Inception'
+    }
+    removed: ('sport', 'basketball')
 
 .. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
