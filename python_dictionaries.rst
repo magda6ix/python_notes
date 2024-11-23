@@ -267,4 +267,62 @@ Output:
     }
     removed: ('sport', 'basketball')
 
+
+Let's practice - Toolbox System
+-------------------------------
+
+In the example below, we simulate a simple **toolbox system** where the user can select different tasks to be performed. 
+The program checks if the necessary tools are available in the toolbox to complete the task.
+
+First, Let's analyze the two dictionaries, below:
+
+.. code-block::
+
+    toolbox = {
+        "scissors": 1,
+        "tape": 1,  # rolls
+        "glue": 2,  # bottles
+        "paper": 5,  # sheets
+        "marker": 3,  # pens
+        "string": 10,  # meters
+        "cardboard": 3,  # sheets
+        "stapler": 1,
+        "rubber band": 10,  # bands
+    }
+
+    actions = {
+        "Make a greeting card": [
+            "scissors",
+            "tape",
+            "paper",
+            "marker",
+        ],
+        "Wrap a gift": [
+            "scissors",
+            "tape",
+            "paper",
+            "string",
+        ],
+        "Create a paper airplane": [
+            "paper",
+            "scissors",
+        ],
+        "Build a cardboard box": [
+            "cardboard",
+            "scissors",
+            "tape",
+        ],
+        "Organize papers": [
+            "stapler",
+            "rubber band",
+        ],
+        "Tie a bundle of papers": [
+            "string",
+            "rubber band",
+        ],
+    }
+
+
+
+
 .. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
