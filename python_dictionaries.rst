@@ -271,23 +271,23 @@ Output:
 Let's practice - Toolbox System
 -------------------------------
 
-In the example below, we simulate a simple **toolbox system** where the user can select different tasks to be performed. 
+In the example below, we simulate a simple toolbox system where the user can select different tasks to be performed. 
 The program checks if the necessary tools are available in the toolbox to complete the task.
 
-First, Let's analyze the two dictionaries, below:
+First, let's analyze the two dictionaries, below:
 
-.. code-block::
+.. code-block:: python
 
     toolbox = {
         "scissors": 1,
-        "tape": 1,  # rolls
-        "glue": 2,  # bottles
-        "paper": 5,  # sheets
-        "marker": 3,  # pens
-        "string": 10,  # meters
-        "cardboard": 3,  # sheets
+        "tape": 1, 
+        "glue": 2,
+        "paper": 5,
+        "marker": 3,
+        "string": 10,
+        "cardboard": 3,
         "stapler": 1,
-        "rubber band": 10,  # bands
+        "rubber band": 10,
     }
 
     actions = {
@@ -296,6 +296,7 @@ First, Let's analyze the two dictionaries, below:
             "tape",
             "paper",
             "marker",
+            "glitter"
         ],
         "Wrap a gift": [
             "scissors",
@@ -322,7 +323,96 @@ First, Let's analyze the two dictionaries, below:
         ],
     }
 
+We have a toolbox with several tools (scissors, tape, etc.), and a set of actions 
+that require specific tools. 
 
+Now, we need to make these dictionaries useful and create some code.
+
+
+.. code-block:: python
+
+    display_d = {}
+    for index, key in enumerate(actions):
+        display_d[str(index + 1)] = key
+
+    while True:
+        print("Please choose an action:")
+        print("----------------------------")
+        for key, value in display_d.items():
+            print(f"{key} - {value}")
+
+        choice = input(": ")
+
+        if choice == "0":
+            break
+        elif choice in display_d:
+            selected_action = display_d[choice]
+            print(f"You have selected: {selected_action}")
+            print("Checking availability...")
+
+            required_tools = actions[selected_action]
+            for tool in required_tools:
+                if tool in toolbox:
+                    print(f"\t {tool} - OK")
+                else:
+                    print(f"\t You don't have the necessary tool - {tool}")
+
+
+Let's run the code and then analyze it step by step.
+First, we get the following output:
+
+.. code-block::
+
+    Please choose an action:
+    ----------------------------
+    1 - Make a greeting card
+    2 - Wrap a gift
+    3 - Create a paper airplane
+    4 - Build a cardboard box
+    5 - Organize papers
+    6 - Tie a bundle of papers
+    : 
+
+The program is waiting for our input. For example, if we want to build a cardboard box, 
+we need to type in ``4``. The program will check the availability of the materials needed to perform this action.
+
+.. code-block::
+
+    Please choose an action:
+    ----------------------------
+    1 - Make a greeting card
+    2 - Wrap a gift
+    3 - Create a paper airplane
+    4 - Build a cardboard box
+    5 - Organize papers
+    6 - Tie a bundle of papers
+    : 4
+    You have selected: Build a cardboard box
+    Checking availability...
+        cardboard - OK
+        scissors - OK
+        tape - OK
+
+The code output states that the toolbox dictionary contains all the necessary elements
+to build a cartboard box.
+
+Because the code is wrapped into the ``while True`` loop, it will continue running 
+indefinitely. You can try different options available in the list of actions.
+
+Let's see what happens, if we don't have all the nexessary tools, by choosing ``1`` from the list:
+
+.. code-block::
+
+    You have selected: Make a greeting card
+    Checking availability...
+        scissors - OK
+        tape - OK
+        paper - OK
+        marker - OK
+        You don't have the necessary tool - glitter
+
+
+The code output correctly displays the information that we don't have glitter. 
 
 
 .. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
