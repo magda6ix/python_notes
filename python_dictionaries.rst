@@ -424,15 +424,16 @@ First, we have two dictionaries defined - ``toolbox`` and ``actions``
 Then, the program creates a dictionary ``display_d`` that maps a number to the task name (in the ``for`` loop), 
 so the menu can be displayed in a readable format afther the code is run.
 
-.. code-block::python
+.. code-block:: python
 
     display_d = {}
     for index, key in enumerate(actions):
         display_d[str(index + 1)] = key
 
+
 Next, the program enters a ``while`` loop that continuously asks us to select an action from the list:
 
-.. code-block::python
+.. code-block:: python
 
     while True:
         print("Please choose an action:")
@@ -442,18 +443,22 @@ Next, the program enters a ``while`` loop that continuously asks us to select an
 
         choice = input(": ")
 
+
 We're prompted to select an action by entering the number corresponding to our choice.
 
 If we select 0, the loop ends and the program terminates:
 
-.. code-block::python
+
+.. code-block:: python
 
     if choice == "0":
         break
 
+
 If we select a valid number, the program retrieves the corresponding action from the ``display_d`` dictionary and displays it:
 
-.. code-block::python
+
+.. code-block:: python
 
     elif choice in display_d:
         selected_action = display_d[choice]
@@ -463,7 +468,8 @@ If we select a valid number, the program retrieves the corresponding action from
 Then, the program checks if the all tools required for this action are available, by iterating through the tools stored in the ``actions`` dictionary. 
 If the tool is available, the program prints a confirmation message - OK, if not - it informs us that we're missing that tool:
 
-.. code-block::python
+
+.. code-block:: python
 
     required_tools = actions[selected_action]
     for tool in required_tools:
