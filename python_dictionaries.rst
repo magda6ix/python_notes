@@ -430,7 +430,7 @@ so the menu can be displayed in a readable format afther the code is run.
     for index, key in enumerate(actions):
         display_d[str(index + 1)] = key
 
-Next, the program enters a ``while`` loop that continuously asks us to select a task from the list:
+Next, the program enters a ``while`` loop that continuously asks us to select an action from the list:
 
 .. code-block::python
 
@@ -442,7 +442,7 @@ Next, the program enters a ``while`` loop that continuously asks us to select a 
 
         choice = input(": ")
 
-We're prompted to select a task by entering the number corresponding to our choice.
+We're prompted to select an action by entering the number corresponding to our choice.
 
 If we select 0, the loop ends and the program terminates:
 
@@ -451,7 +451,7 @@ If we select 0, the loop ends and the program terminates:
     if choice == "0":
         break
 
-If we select a valid number (corresponding to a task), the program retrieves it from the ``display_d`` dictionary and displays it:
+If we select a valid number, the program retrieves the corresponding action from the ``display_d`` dictionary and displays it:
 
 .. code-block::python
 
@@ -460,7 +460,7 @@ If we select a valid number (corresponding to a task), the program retrieves it 
         print(f"You have selected: {selected_action}")
         print("Checking availability...")
 
-Then, the program checks if the tools required for this action are available, by iterating through the tools stored in the ``actions`` dictionary. 
+Then, the program checks if the all tools required for this action are available, by iterating through the tools stored in the ``actions`` dictionary. 
 If the tool is available, the program prints a confirmation message - OK, if not - it informs us that we're missing that tool:
 
 .. code-block::python
