@@ -412,7 +412,66 @@ Let's see what happens, if we don't have all the nexessary tools, by choosing ``
         You don't have the necessary tool - glitter
 
 
-The code output correctly displays the information that we don't have glitter. 
+The code output correctly displays the information that we don't have glitter.
+
+What's going on in this code snippet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now that we know, the way this code works, let's analyze it step by step.
+
+First, we have two dictionaries defined - ``toolbox`` and ``actions``
+
+Then, the program creates a dictionary ``display_d`` that maps a number to the task name (in the ``for`` loop), 
+so the menu can be displayed in a readable format afther the code is run.
+
+.. code-block::python
+
+    display_d = {}
+    for index, key in enumerate(actions):
+        display_d[str(index + 1)] = key
+
+Next, the program enters a ``while`` loop that continuously asks us to select a task from the list:
+
+.. code-block::python
+
+    while True:
+        print("Please choose an action:")
+        print("----------------------------")
+        for key, value in display_d.items():
+            print(f"{key} - {value}")
+
+        choice = input(": ")
+
+We're prompted to select a task by entering the number corresponding to our choice.
+
+If we select 0, the loop ends and the program terminates:
+
+.. code-block::python
+
+    if choice == "0":
+        break
+
+If we select a valid number (corresponding to a task), the program retrieves it from the ``display_d`` dictionary and displays it:
+
+.. code-block::python
+
+    elif choice in display_d:
+        selected_action = display_d[choice]
+        print(f"You have selected: {selected_action}")
+        print("Checking availability...")
+
+Then, the program checks if the tools required for this action are available, by iterating through the tools stored in the ``actions`` dictionary. 
+If the tool is available, the program prints a confirmation message - OK, if not - it informs us that we're missing that tool:
+
+.. code-block::python
+
+    required_tools = actions[selected_action]
+    for tool in required_tools:
+        if tool in toolbox:
+            print(f"\t {tool} - OK")
+        else:
+            print(f"\t You don't have the necessary tool - {tool}")
+
 
 
 .. _`Python dictionary`: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
