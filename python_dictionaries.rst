@@ -1,6 +1,27 @@
 Python Dictionaries
 ===================
 
+Table of Contents
+=================
+
+1. `Indexing Method`_
+2. `get() Method`_
+3. `Iterating over a dictionary`_
+4. `Changing values in the dictionary`_
+5. `Removing items from a dictionary`_
+6. `Let's practice - Toolbox System`_
+7. `What's going on in this code snippet`_
+
+.. _Indexing Method: #indexing-method
+.. _get() Method: #get-method
+.. _Iterating over a dictionary: #iterating-over-a-dictionary
+.. _Changing values in the dictionary: #changing-values-in-the-dictionary
+.. _Removing items from a dictionary: #removing-items-from-a-dictionary
+.. _Let's practice - Toolbox System: #lets-practice-toolbox-system
+.. _What's going on in this code snippet: #whats-going-on-in-this-code-snippet
+
+
+
 A `Python dictionary`_ is a collection of values, stored using a key. Keys are unique and case sensitive.
 
 Here's an example dictionary:
